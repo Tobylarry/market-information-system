@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>B&G | SuperMart</title>
+    <meta charset="UTF-8">
+      <meta n ame="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+    .container {
+       margin-top: 50px;
+       background-color:red;
+       color: black;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="ff">
+            <hr>
+            <form action="/submit4" method="POST">
+                <fieldset>
+                    <label for="i_c">Item Code </label><br>
+                    <input type="text" id="i_c" name="i_c"  />
+                    <br/>
+                    <label for="i">Item </label><br>
+                    <input type="text" id="i" name="i"  /> 
+                    <br>
+                    <label for="upu">Price </label><br>
+                    <input type="text" id="upu" name="upu"/>
+                    <br> 
+                    <label for="c_id">Company ID</label><br>
+                    <input type="number" id="c_id" name="c_id"/> 
+                    <br>
+                    <br>
+                <form action="/submit22" method="POST">
+                  <button class="btn btn-primary"> Create Item </button> 
+                </form>
+                </fieldset>
+            </form>
+            <hr>
+        </div>
+
+    </div>
+    
+</body>
+</html>

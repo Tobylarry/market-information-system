@@ -1,0 +1,35 @@
+app.post('/retrieve', function(req,res){
+    var d_o_p = req.boby.d_o_p;
+  con.connect(function(err) {
+    if (err) throw err;
+    var sql = "SELECT * FROM sales where d_o_p = '"+d_o_p+"'";
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log(result);
+    });
+  });
+})
+})
+
+
+app.post('/submitt', function(req,res){
+
+    var c_i=req.body.c_i;
+    var fn=req.body.fn;
+    var ln=req.body.ln;
+    var ea=req.body.ea;
+    var noc=req.body.noc;
+  
+    con.connect(function(err) {
+    if (err) throw err;
+    var sql = "INSERT INTO customers (customer_id, first_name, last_name, email_address) VALUES ('"+c_i+"', '"+fn+"', '"+ln+"', '"+ea+"', '"+noc+"')";
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted");
+       res.end(`
+       <a href="/"> Return to Homepage!!</a>
+       `);
+    });
+    });
+  
+ 

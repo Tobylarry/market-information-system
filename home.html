@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>B&G | SuperMart</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .avatar {
+        
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      #hd1{
+        text-align: center;
+      }
+        </style>
+    
+</head>
+<body>
+  
+    <div class="container bg-grey">
+    <div class="container-fluid bg-dark text-white" id="hd1">
+        <h1> B&G SUPERMART & ELECTRONICS</h1>
+        <P>Welcome to gadget depot</P>
+          </div> <br>
+          <div class="header">
+            <img src="luf.jpg" class="avatar">
+            <p>Jane Doe</p>
+            <a href="/"> Logout </a>
+          </div> 
+          <hr>
+<div class="container mt-3">
+  
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#home">Enter Sales</a>
+    </li>
+
+  <!-- Tab panes -->
+    <div id="home" class="container tab-pane active"><br> 
+        <form action="/submit" method="POST">
+            <fieldset>
+                <label for="punum">Purchase Number</label><br>
+                <input type="text" id="punum" name="punum" autofocus />
+                <br/>
+                <label for="dop">Date of Purchase </label><br>
+                <input type="date" id="dop" name="dop"/>
+                <br/>
+                <label for="ci">Customer ID </label><br>
+                <input type="text" id="ci" name="ci"  /> 
+                <br>
+                <label for="ic">Item Code </label><br>
+                <input type="text" id="ic" name="ic"/>
+                <br> 
+                <input type="submit" value="Input Sales" class="bg-primary"/>
+            </fieldset>
+        </form> <br> <br> <hr>
+        <form action="/retrieve" method="GET">
+          <fieldset>
+            <label for="d_o_p">Date of Purchase </label><br>
+            <input type="date" id="d_o_p" name="d_o_p"/>
+            <br/>  <br>
+            <input type="submit" value="Retrieve Sales" class="bg-primary"/>
+          </fieldset>
+      </form>
+    
+    </div>
+  </div>
+</div>
+    </div>
+<script>
+$(document).ready(function(){
+  $(".nav-tabs a").click(function(){
+    $(this).tab('show');
+  });
+  $('.nav-tabs a').on('shown.bs.tab', function(event){
+    var x = $(event.target).text();         // active tab
+    var y = $(event.relatedTarget).text();  // previous tab
+    $(".act span").text(x);
+    $(".prev span").text(y);
+  });
+});
+</script>
+
+</body>
+</html>

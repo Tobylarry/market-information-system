@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>B&G | SuperMart</title>
+    <meta charset="UTF-8">
+      <meta n ame="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  #hd {
+    text-align: center;
+  }
+  .headd {
+    border: 1px solid black;
+    background-color: blue;
+  }
+    </style>
+
+</head>
+    <body>
+      <br><br><br>
+        <div class="container bg-grey">
+
+            <div class="container bg-dark text-white" id="hd">
+                <h1 class="headd"> B&G SUPERMART & ELECTRONICS</h1>
+                <P>Welcome to gadget depot</P>
+                  </div> <br>
+                  <div class="avatar">
+                    <img src="luf.jpg" alt="Avatar" class="avatar"> 
+                    <p>Admin</p>
+                    <a href="/"> Logout </a>
+                  </div> <br> <br> <br>
+                  <div class="container mt-3">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                  </ul>  
+        </div>
+
+                  <div class="tab-content border mb-3">
+                    <div id="home" class="container tab-pane active"><br>
+                        <div class="ff">
+                            <form action="/submitt" method="POST">
+                                <fieldset>
+                                    <label for="fn">First Name </label><br>
+                                    <input type="text" id="fn" name="fn"  />
+                                    <br/>
+                                    <label for="ln">Last Name </label><br>
+                                    <input type="text" id="ln" name="ln"  /> 
+                                    <br>
+                                    <label for="ea">Email </label><br>
+                                    <input type="text" id="ea" name="ea"/>
+                                    <br> 
+                                    <label for="noc">Number of Complaints </label><br>
+                                    <input type="number" id="noc" name="noc"/> 
+                                    <br>
+                                    <br>
+                                   <button class="btn btn-primary"> Create customers </button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu1" class="container tab-pane fade"><br>
+                </div>
+                <div class="container">
+                  <form action="/delete" method="POST">
+                    <fieldset>
+                      <label for="cui">Delete Customer</label><br>
+                      <input type="number" id="cui" name="cui"/>
+                      <br/>  <br>
+                      <button class="btn btn-danger">Delete Customer</button>
+                    </fieldset>
+                </form> <hr>
+                  </div>
+        </div>
+        <br>
+        
+        <div class="container">
+          <h2>Create New Items </h2>
+         
+        </form> 
+        <form action="/submit2" method="POST">
+          <button class="btn btn-primary"> Create Item </button>
+           
+        </form>
+          <form action="/delete" method="POST">
+            <fieldset>
+              <label for="idd">Delete Item</label><br>
+              <input type="text/int" id="idd" name="idd"/>
+              <br/>  <br>
+              <button class="btn btn-danger">Delete Item</button>
+            </fieldset>
+        </form> 
+          <hr>
+      </div>
+      <div class="container">
+        <h3>Create New Company</h3>
+
+      <form action="/submitted" method="POST">
+        <button class="btn btn-primary"> Create Company </button>  
+      </form>
+
+        <form action="/deletee" method="POST" id="forr">
+          <fieldset>
+            <label for="dc">Delete Company</label><br>
+            <input type="number" id="dc" name="dc"/>
+            <br/>  <br>
+            <button class="btn btn-danger">Delete Company</button>
+          </fieldset>
+      </form> 
+        <hr>
+    </div>
+        
+        <script>
+            $(document).ready(function(){
+  $(".nav-tabs a").click(function(){
+    $(this).tab('show');
+  });
+  $('.nav-tabs a').on('shown.bs.tab', function(event){
+    var x = $(event.target).text();         // active tab
+    var y = $(event.relatedTarget).text();  // previous tab
+    $(".act span").text(x);
+    $(".prev span").text(y);
+  });
+});
+        </script>
+      
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fetch using MySQL and Node.js</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    table, td, th {  
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 50%;
+     
+    }
+    .table-data{
+        position: relative;
+      left:150px;
+      top:100px;
+    }
+    th, td {
+      padding: 15px;
+    }
+    </style>
+</head>
+<body>
+    <div class="table-data">
+
+    <table border="1">
+        <tr>
+            <th>S.N</th>
+            <th>purchase_number</th>
+            <th>date_of_purchase</th>
+            <th>customer_id</th>
+            <th>item_code</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        
+        <%
+        if(listData.length!=0){
+        var i=1;
+        listData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.purchase_number %></td>
+            <td><%=data.date_of_purchase %></td>
+            <td><%=data.customer_id %></td>
+            <td><%=data.item_code %></td>
+            <td><a href="/user/edit/<%=data.id%>">Edit</a></td>
+            <td><a href="/user/delete/<%=data.id%>">Delete</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
